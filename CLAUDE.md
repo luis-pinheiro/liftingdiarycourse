@@ -12,6 +12,7 @@ Lifting Diary Course - a Next.js 16 full-stack web application for fitness/exerc
 
 Current documentation files:
 - `docs/ui.md` - UI components and styling guidelines
+- `docs/data-fetching.md` - Data fetching patterns and database access rules
 
 Read the relevant docs file(s) first to ensure generated code follows established project patterns and conventions.
 
