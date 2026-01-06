@@ -20,6 +20,43 @@ export async function createWorkout(userId: string, data: NewWorkout) {
   return workout;
 }
 
+export type UpdateWorkout = {
+  name: string | null;
+  startedAt: Date;
+};
+
+export async function getWorkoutById(userId: string, workoutId: number) {
+  const [workout] = await db
+    .select()
+    .from(workouts)
+    .where(
+      and(
+        eq(workouts.id, workoutId),
+        eq(workouts.userId, userId)
+      )
+    );
+
+  return workout || null;
+}
+
+export async function updateWorkout(userId: string, workoutId: number, data: UpdateWorkout) {
+  const [workout] = await db
+    .update(workouts)
+    .set({
+      name: data.name,
+      startedAt: data.startedAt,
+    })
+    .where(
+      and(
+        eq(workouts.id, workoutId),
+        eq(workouts.userId, userId)
+      )
+    )
+    .returning();
+
+  return workout;
+}
+
 export type WorkoutWithExercises = {
   id: number;
   name: string | null;
