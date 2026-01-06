@@ -1,0 +1,7 @@
+---
+description: Merge and create branch
+---
+
+Commit any changes in the current branch and provide a suitable commit message based on the code changes. 
+Then merge the current branch into the main branch and resolve any issues off the back of that merge.
+Then create a new branch called $ARGUMENTS
