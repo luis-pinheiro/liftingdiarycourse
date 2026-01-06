@@ -6,6 +6,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Lifting Diary Course - a Next.js 16 full-stack web application for fitness/exercise tracking. Built with React 19, TypeScript 5.9, and Tailwind CSS v4.
 
+## IMPORTANT: Documentation Reference
+
+**ALWAYS consult the `/docs` directory before generating any code.** The docs contain project-specific patterns, conventions, and guidelines that must be followed.
+
+Current documentation files:
+- `docs/ui.md` - UI components and styling guidelines
+- `docs/data-fetching.md` - Data fetching patterns and database access rules
+- `docs/data-mutations.md` - Server actions, mutations, and validation rules
+- `docs/auth.md` - Authentication patterns using Clerk
+
+Read the relevant docs file(s) first to ensure generated code follows established project patterns and conventions.
+
 ## Development Commands
 
 ```bash
