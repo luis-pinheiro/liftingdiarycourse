@@ -1,15 +1,8 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { format, parse } from "date-fns";
-import { CalendarIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 
 type DatePickerProps = {
   selectedDate: Date;
@@ -28,20 +21,20 @@ export function DatePicker({ selectedDate }: DatePickerProps) {
   };
 
   return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="outline" className="w-full justify-start">
-          <CalendarIcon className="mr-2 h-4 w-4" />
-          {format(selectedDate, "do MMM yyyy")}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-auto p-0" align="start">
-        <Calendar
-          mode="single"
-          selected={selectedDate}
-          onSelect={handleDateSelect}
-        />
-      </PopoverContent>
-    </Popover>
+    <div className="rounded-md border bg-card text-card-foreground shadow-sm w-full">
+      <Calendar
+        mode="single"
+        selected={selectedDate}
+        onSelect={handleDateSelect}
+        className="p-3 w-full"
+        classNames={{
+          months: "flex w-full flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 flex-1",
+          month: "space-y-4 w-full flex flex-col",
+          table: "w-full h-full border-collapse space-y-1",
+          head_row: "",
+          row: "w-full mt-2",
+        }}
+      />
+    </div>
   );
 }
