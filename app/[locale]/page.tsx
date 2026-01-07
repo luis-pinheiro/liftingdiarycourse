@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { auth } from "@clerk/nextjs/server";
 import { ArrowRight, Calendar, Dumbbell, LineChart } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
@@ -30,9 +30,7 @@ export default function Home() {
             {t("heroSubtitle")}
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Button size="lg" asChild>
-              <AuthButtonLink />
-            </Button>
+            <AuthButtonLink />
             <LoginButtonLink />
           </div>
         </section>
@@ -87,7 +85,10 @@ async function AuthButtonLink() {
   const { userId } = await auth();
   const t = await getTranslations("HomePage");
   return (
-    <Link href={userId ? "/dashboard" : "/sign-up"}>
+    <Link
+      href={userId ? "/dashboard" : "/sign-up"}
+      className={buttonVariants({ size: "lg" })}
+    >
       {t("startLogging")} <ArrowRight className="ml-2 h-4 w-4" />
     </Link>
   );
