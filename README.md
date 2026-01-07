@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lifting Diary
+
+A modern full-stack fitness tracking application built with Next.js 16 and React 19. Users can log workouts, track exercises with sets/reps/weight data, and monitor their fitness progress through an interactive calendar-based interface.
+
+This project demonstrates production-ready development with authentication, database integration, internationalization, and a polished user experience.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 with App Router
+- **Frontend:** React 19, TypeScript 5.9
+- **Styling:** Tailwind CSS v4, Radix UI components
+- **Authentication:** Clerk
+- **Database:** PostgreSQL (Neon) with Drizzle ORM
+- **Validation:** Zod
+- **Internationalization:** next-intl (English/Portuguese)
+
+## Key Features
+
+- **Workout Logging** - Create and edit workouts with name, date, and duration
+- **Exercise Tracking** - Log sets, reps, and weight for each exercise
+- **Calendar Dashboard** - Visual calendar interface to browse workout history by date
+- **User Authentication** - Secure sign-up/sign-in with Clerk, user data isolation
+- **Multi-language Support** - Full internationalization (English and Portuguese)
+- **Dark Mode** - System-aware theming with light/dark mode support
+- **Responsive Design** - Mobile-first layout that works on all devices
+
+## Architecture Highlights
+
+- **Server Components** - Leverages React Server Components for secure data fetching
+- **Server Actions** - Type-safe mutations with Zod validation
+- **Type Safety** - Strict TypeScript throughout the entire codebase
+- **Component Library** - Reusable UI components built on Radix UI primitives
+- **Secure by Design** - User ID verification on all data operations
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Add your Clerk and Neon database credentials
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
