@@ -15,8 +15,14 @@ import {
 } from "@/components/ui/popover";
 import { createWorkout } from "./actions";
 
-export function NewWorkoutForm() {
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+type NewWorkoutFormProps = {
+  initialDate?: Date;
+};
+
+export function NewWorkoutForm({ initialDate }: NewWorkoutFormProps) {
+  const [selectedDate, setSelectedDate] = useState<Date>(
+    initialDate || new Date()
+  );
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -31,6 +37,7 @@ export function NewWorkoutForm() {
     const result = await createWorkout({
       name: formData.get("name") as string,
       startedAt: selectedDate,
+      duration: Number(formData.get("duration")) || undefined,
     });
 
     if (result?.error) {
@@ -57,6 +64,17 @@ export function NewWorkoutForm() {
               name="name"
               placeholder="e.g., Upper Body, Leg Day"
               required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="duration">Duration (minutes)</Label>
+            <Input
+              id="duration"
+              name="duration"
+              type="number"
+              min="1"
+              placeholder="Total time in minutes"
             />
           </div>
 

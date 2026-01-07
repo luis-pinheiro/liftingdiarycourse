@@ -5,6 +5,7 @@ import { eq, and, gte, lt } from "drizzle-orm";
 export type NewWorkout = {
   name: string | null;
   startedAt: Date;
+  completedAt?: Date | null;
 };
 
 export async function createWorkout(userId: string, data: NewWorkout) {
@@ -14,6 +15,7 @@ export async function createWorkout(userId: string, data: NewWorkout) {
       userId,
       name: data.name,
       startedAt: data.startedAt,
+      completedAt: data.completedAt,
     })
     .returning();
 
@@ -23,6 +25,7 @@ export async function createWorkout(userId: string, data: NewWorkout) {
 export type UpdateWorkout = {
   name: string | null;
   startedAt: Date;
+  completedAt?: Date | null;
 };
 
 export async function getWorkoutById(userId: string, workoutId: number) {
@@ -45,6 +48,7 @@ export async function updateWorkout(userId: string, workoutId: number, data: Upd
     .set({
       name: data.name,
       startedAt: data.startedAt,
+      completedAt: data.completedAt,
     })
     .where(
       and(

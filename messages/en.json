@@ -1,0 +1,27 @@
+{
+    "HomePage": {
+        "title": "LiftingDiary",
+        "heroTitle": "Master Your <span class=\"text-primary\">Strength Journey</span>",
+        "heroSubtitle": "The simplest way to track your workouts, monitor your progress, and reach your fitness goals. consistent tracking is the key to progress.",
+        "startLogging": "Start Logging",
+        "logIn": "Log In",
+        "featuresTitle": "Everything you need to grow",
+        "featureCalendarTitle": "Calendar View",
+        "featureCalendarDescription": "Visualize your consistency. See your workout history at a glance and plan your week ahead.",
+        "featureLoggingTitle": "Easy Logging",
+        "featureLoggingDescription": "Quick and intuitive data entry. Spend less time on your phone and more time lifting.",
+        "featureProgressTitle": "Progress Tracking",
+        "featureProgressDescription": "Watch your numbers go up. Track your personal records and volume over time.",
+        "footer": "© {year} LiftingDiary. All rights reserved."
+    },
+    "Dashboard": {
+        "title": "Dashboard",
+        "logout": "Logout",
+        "workoutsTitle": "Workouts",
+        "noWorkouts": "No workouts logged for this date.",
+        "logWorkout": "Log Workout",
+        "exerciseCount": "{count, plural, =1 {1 exercise} other {# exercises}}",
+        "editWorkout": "Edit workout",
+        "setCount": "{count, plural, =1 {1 set} other {# sets}}"
+    }
+}

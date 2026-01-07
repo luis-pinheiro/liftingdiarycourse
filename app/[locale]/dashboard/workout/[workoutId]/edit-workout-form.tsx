@@ -15,11 +15,14 @@ import {
 } from "@/components/ui/popover";
 import { updateWorkout } from "./actions";
 
+import { differenceInMinutes } from "date-fns";
+
 type EditWorkoutFormProps = {
     workout: {
         id: number;
         name: string | null;
         startedAt: Date;
+        completedAt: Date | null;
     };
 };
 
@@ -27,6 +30,10 @@ export function EditWorkoutForm({ workout }: EditWorkoutFormProps) {
     const [selectedDate, setSelectedDate] = useState<Date>(new Date(workout.startedAt));
     const [error, setError] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const initialDuration = workout.completedAt
+        ? differenceInMinutes(new Date(workout.completedAt), new Date(workout.startedAt))
+        : "";
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -40,6 +47,7 @@ export function EditWorkoutForm({ workout }: EditWorkoutFormProps) {
             workoutId: workout.id,
             name: formData.get("name") as string,
             startedAt: selectedDate,
+            duration: Number(formData.get("duration")) || undefined,
         });
 
         if (result?.error) {
@@ -67,6 +75,18 @@ export function EditWorkoutForm({ workout }: EditWorkoutFormProps) {
                             placeholder="e.g., Upper Body, Leg Day"
                             defaultValue={workout.name || ""}
                             required
+                        />
+                    </div>
+
+                    <div className="space-y-2">
+                        <Label htmlFor="duration">Duration (minutes)</Label>
+                        <Input
+                            id="duration"
+                            name="duration"
+                            type="number"
+                            min="1"
+                            placeholder="Total time in minutes"
+                            defaultValue={initialDuration}
                         />
                     </div>
 

@@ -1,0 +1,23 @@
+
+> liftingdiarycourse@0.1.0 build
+> next build
+
+⨯ Failed to load next.config.ts, see more info here https://nextjs.org/docs/messages/next-config-error
+
+> Build error occurred
+Error: 
+[next-intl] Could not locate request configuration module.
+
+This path is supported by default: ./(src/)i18n/request.{js,jsx,ts,tsx}
+
+Alternatively, you can specify a custom location in your Next.js config:
+
+const withNextIntl = createNextIntlPlugin(
+
+Alternatively, you can specify a custom location in your Next.js config:
+
+const withNextIntl = createNextIntlPlugin(
+  './path/to/i18n/request.tsx'
+);
+
+    at Object.<anonymous> (C:\Users\tropa\Documents\Dev\Learning\Claude\Use Claude Code AI to build Nextjs\liftingdiarycourse\next.config.compiled.js:20:18)

@@ -1,0 +1,27 @@
+{
+    "HomePage": {
+        "title": "LiftingDiary",
+        "heroTitle": "Domine Sua <span class=\"text-primary\">Jornada de Força</span>",
+        "heroSubtitle": "A maneira mais simples de acompanhar seus treinos, monitorar seu progresso e alcançar seus objetivos de fitness. O acompanhamento consistente é a chave para o progresso.",
+        "startLogging": "Começar a Registrar",
+        "logIn": "Entrar",
+        "featuresTitle": "Tudo o que você precisa para crescer",
+        "featureCalendarTitle": "Visualização de Calendário",
+        "featureCalendarDescription": "Visualize sua consistência. Veja seu histórico de treinos num relance e planeje sua semana.",
+        "featureLoggingTitle": "Registro Fácil",
+        "featureLoggingDescription": "Entrada de dados rápida e intuitiva. Passe menos tempo no celular e mais tempo levantando peso.",
+        "featureProgressTitle": "Acompanhamento de Progresso",
+        "featureProgressDescription": "Veja seus números subirem. Acompanhe seus recordes pessoais e volume ao longo do tempo.",
+        "footer": "© {year} LiftingDiary. Todos os direitos reservados."
+    },
+    "Dashboard": {
+        "title": "Painel",
+        "logout": "Sair",
+        "workoutsTitle": "Treinos",
+        "noWorkouts": "Nenhum treino registrado para esta data.",
+        "logWorkout": "Registrar Treino",
+        "exerciseCount": "{count, plural, =1 {1 exercício} other {# exercícios}}",
+        "editWorkout": "Editar treino",
+        "setCount": "{count, plural, =1 {1 série} other {# séries}}"
+    }
+}

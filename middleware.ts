@@ -1,6 +1,14 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
+import createMiddleware from "next-intl/middleware";
 
-export default clerkMiddleware();
+const intlMiddleware = createMiddleware({
+  locales: ["en", "pt"],
+  defaultLocale: "en",
+});
+
+export default clerkMiddleware(async (auth, req) => {
+  return intlMiddleware(req);
+});
 
 export const config = {
   matcher: [

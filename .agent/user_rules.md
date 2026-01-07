@@ -57,3 +57,19 @@ For complete routing standards, see `docs/routing.md`.
 - **ALWAYS** update this `user_rules.md` file when adding new documentation to `docs/`
 - Reference the new documentation file with a brief summary of its key rules
 - This ensures guidelines stay visible and discoverable by the AI assistant
+
+## Git Workflow Automation
+
+**Goal**: Automate the commit and push process for efficient development.
+
+1.  **Trigger**: Apply this workflow after successfully completing a requested code change or set of changes.
+2.  **Scope**: Use your judgment ("You decide") on when a set of changes is "complete" enough to commit.
+3.  **Actions**:
+    - **Stage**: Stage all modified files.
+    - **Commit**: Generate a descriptive commit message based on the changes (e.g., `feat: ...`, `fix: ...`, `refactor: ...`).
+    - **Push**: Push the changes to the remote repository.
+4.  **Confirmation Policy ("Turbo Mode")**:
+    - **Default**: Execute the Commit and Push **automatically** without asking, immediately after applying edits.
+    - **Exception**: Ask for confirmation **BEFORE** committing/pushing ONLY if:
+        - The user explicitly requested to "check", "review", or "verify" the changes first.
+        - The changes involve significant deletions or high-risk operations.
